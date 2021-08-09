@@ -1,8 +1,6 @@
 {
   "name": "Katakana",
   "description": "A fundamental component of the Japanese writing system used mostly for foreign words.",
-  "icon": "カ",
-  "group": 2,
   "characters": {
     "ア": ["a"],
     "イ": ["i"],

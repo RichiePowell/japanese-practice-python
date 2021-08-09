@@ -1,8 +1,6 @@
 {
   "name": "Hiragana Combos",
   "description": "Two separate hiragana characters contracted into one sound.",
-  "icon": "ひょ",
-  "group": 1,
   "characters": {
     "きゃ": ["kya"],
     "きゅ": ["kyu"],

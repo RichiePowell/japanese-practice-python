@@ -1,8 +1,6 @@
 {
   "name": "Katakana Combos",
   "description": "Two separate katakana characters contracted into one sound.",
-  "icon": "キョ",
-  "group": 2,
   "characters": {
     "キャ": ["kya"],
     "キュ": ["kyu"],

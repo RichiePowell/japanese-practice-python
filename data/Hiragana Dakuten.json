@@ -1,8 +1,6 @@
 {
   "name": "Hiragana Dakuten/Handakuten",
   "description": "Dakuten and handakuten are marks that indicate a change in pronunciation.",
-  "icon": "び",
-  "group": 1,
   "characters": {
     "が": ["ga"],
     "ぎ": ["gi"],
