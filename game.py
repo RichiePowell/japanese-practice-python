@@ -1,5 +1,7 @@
 import inquirer
 import json
+import sys
+import signal
 import os
 from random import shuffle
 
@@ -7,6 +9,9 @@ from random import shuffle
 def cls():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+
+# Avoid stacktrace on CTRL + C
+signal.signal(signal.SIGINT, lambda x, y: sys.exit(0))
 
 # Get data sets
 filenames = sorted([".".join(f.split(".")[:-1])
@@ -64,9 +69,9 @@ while True:
     correctPercentage = (stats['correct'] / len(loadedData) * 100)
     incorrectPercentage = (stats['incorrect'] / len(loadedData) * 100)
     print('Correct answers: %s (%s%%)' %
-          (str(stats['correct']), correctPercentage))
+          (str(stats['correct']), int(correctPercentage)))
     print('Incorrect answers: %s (%s%%)' %
-          (str(stats['incorrect']), incorrectPercentage))
+          (str(stats['incorrect']), int(incorrectPercentage)))
 
     # Show different outputs depending on results
     if correctPercentage == 100:
@@ -76,11 +81,15 @@ while True:
     elif correctPercentage > 50:
         print("\nOver 50%% correct - keep practicing!")
     else:
-        print("\nKeep learning and you'll get there! :)")
+        print("\nKeep learning and you'll get there! :)\n\n")
 
     # Ask if the user wants to play again
-    playAgain = input('\n\nWould you like to play again? (Y/n) ')
-    if playAgain.lower() == 'y':
-        cls()
-    else:
-        break
+    while True:
+        playAgain = input('Would you like to play again? (Y/n) ')
+        if playAgain[:1].lower() == 'y':
+            cls()
+            break
+        elif playAgain[:1].lower() == 'n':
+            exit()
+        else:
+            print('Please enter "Y" or "N".')
