@@ -81,4 +81,4 @@ Feel free to fork the project and submit pull requests for new features or bug f
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License.
